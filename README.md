@@ -34,6 +34,10 @@ Based on the project's functionality, the system offers the following:
 ---
 ## ScreenShots 
 <img width="1895" height="906" alt="image" src="https://github.com/user-attachments/assets/9c897cb1-0dcf-43aa-b7ef-f50a697ceef9" />
+<img width="1894" height="908" alt="Screenshot 2025-09-07 175302" src="https://github.com/user-attachments/assets/825550eb-3729-4e94-a173-836c6fd7f79c" />
+<img width="1916" height="910" alt="Screenshot 2025-09-07 175248" src="https://github.com/user-attachments/assets/f4576975-e7ed-4245-b16c-1e52b263dab9" />
+<img width="1910" height="904" alt="Screenshot 2025-09-07 175234" src="https://github.com/user-attachments/assets/b1219a58-ccec-4177-a86b-6deed10c10fd" />
+
 
 
 ##  Setup and Installation
