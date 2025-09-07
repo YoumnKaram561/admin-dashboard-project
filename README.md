@@ -32,6 +32,9 @@ Based on the project's functionality, the system offers the following:
 -   **Google Fonts**: The *Poppins* font family was used for modern and readable typography.
 
 ---
+## ScreenShots 
+<img width="1895" height="906" alt="image" src="https://github.com/user-attachments/assets/9c897cb1-0dcf-43aa-b7ef-f50a697ceef9" />
+
 
 ##  Setup and Installation
 
