@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loader">
+        <img src="https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca.gif" alt="Loading...">
+    </div>
+
+    <div class="site-wrapper">
+       
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-chart-line"></i>
+                <h2>Dashboard</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="posts.html" class="active"><i class="fas fa-file-alt"></i> Posts</a>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="main-header with-actions">
+                <h1 class="animate__animated animate__fadeInDown">Posts</h1>
+                <div class="header-actions animate__animated animate__fadeInDown">
+                    <input type="text" id="search-posts" placeholder="Search posts...">
+                    <button id="add-post" class="add-button"><i class="fas fa-plus"></i> Add Post</button>
+                </div>
+            </header>
+
+            <section id="posts-container" class="posts-grid animate__animated animate__fadeInUp">
+            </section>
+        </main>
+    </div>
+
+  
+    <div id="add-post-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Add New Post</h2>
+            <form id="add-post-form">
+                <label for="post-title">Title:</label>
+                <input type="text" id="post-title" required>
+                <label for="post-body">Body:</label>
+                <textarea id="post-body" rows="5" required></textarea>
+                <button type="submit">Add Post</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="edit-post-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Edit Post</h2>
+            <form id="edit-post-form">
+                <input type="hidden" id="edit-post-id">
+                <label for="edit-post-title">Title:</label>
+                <input type="text" id="edit-post-title" required>
+                <label for="edit-post-body">Body:</label>
+                <textarea id="edit-post-body" rows="5" required></textarea>
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="comments-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Comments</h2>
+            <div id="comments-list"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

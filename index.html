@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loader">
+        <img src="https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca.gif" alt="Loading...">
+    </div>
+
+    <div class="site-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-chart-line"></i>
+                <h2>Dashboard</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="posts.html"><i class="fas fa-file-alt"></i> Posts</a>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1 class="animate__animated animate__fadeInDown">Dashboard Overview</h1>
+            </header>
+
+            <section class="stats-grid animate__animated animate__fadeInUp">
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <i class="fas fa-users"></i>
+                        <h3>Users</h3>
+                    </div>
+                    <p id="users-count">0</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <i class="fas fa-file-alt"></i>
+                        <h3>Posts</h3>
+                    </div>
+                    <p id="posts-count">0</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <i class="fas fa-comments"></i>
+                        <h3>Comments</h3>
+                    </div>
+                    <p id="comments-count">0</p>
+                </div>
+            </section>
+
+            <section class="table-container animate__animated animate__fadeInUp animate__delay-1s">
+                <div class="table-header">
+                    <h2>All Users</h2>
+                    <button id="add-user" class="add-button"><i class="fas fa-plus"></i> Add User</button>
+                </div>
+                <table id="users-table" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+
+            <section class="table-container animate__animated animate__fadeInUp animate__delay-1s">
+                <h2><i class="fas fa-star" style="color: #ffc107;"></i> Favorite Users</h2>
+                <table id="favorites-table" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <div id="add-user-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Add New User</h2>
+            <form id="add-user-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" required>
+                <button type="submit">Add User</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="edit-user-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Edit User</h2>
+            <form id="edit-user-form">
+                <input type="hidden" id="edit-id">
+                <label for="edit-name">Name:</label>
+                <input type="text" id="edit-name" required>
+                <label for="edit-email">Email:</label>
+                <input type="email" id="edit-email" required>
+                <label for="edit-phone">Phone:</label>
+                <input type="text" id="edit-phone" required>
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
